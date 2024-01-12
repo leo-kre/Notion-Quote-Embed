@@ -12,7 +12,6 @@ export default function Home() {
                         setQuote({ text: data[0].text, author: data[0].author.replace(", type.fit", "") });
                   });
       }, []);
-      console.log(quote);
 
       const [bgColor, setBgColor] = useState("#FFFFFF");
       const [textColor, setTextColor] = useState("#000000");
@@ -66,9 +65,4 @@ export default function Home() {
                   </div>
             </div>
       );
-}
-
-interface Quote {
-      text: String;
-      author: String;
 }
