@@ -9,13 +9,13 @@ export default function Embed() {
       const textColor = "#" + searchParams.get("text");
       const accentColor = "#" + searchParams.get("accent");
 
-      const [quote, setQuote] = useState({ text: "Test Quote", author: "Test Author" });
+      const [quote, setQuote] = useState({ text: "It is only when we take chances, when our lives improve. The initial and the most difficult risk that we need to take is to become honest", author: "~Walter Anderson" });
 
       useEffect(() => {
             fetch("https://type.fit/api/quotes")
                   .then((response) => response.json())
                   .then((data) => {
-                        setQuote({ text: data[0].text, author: data[0].author.replace(", type.fit", "") });
+                        setQuote({ text: data[0].text, author: "~" + data[0].author.replace(", type.fit", "") });
                   });
       }, []);
 
@@ -25,7 +25,7 @@ export default function Embed() {
                         {quote.text}
                   </h1>
                   <h2 className={`text-lg font-semibold`} style={{ color: `${accentColor}` }}>
-                        {"~" + quote.author}
+                        {quote.author}
                   </h2>
             </div>
       );
