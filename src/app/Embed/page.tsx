@@ -20,7 +20,7 @@ export default function Embed() {
       }, []);
 
       return (
-            <div className={"p-10 pl-5 py-5 min-h-screen flex flex-col justify-center rounded-md"} style={{ background: `${bgColor}` }}>
+            <div className={"p-10 pl-5 py-5 min-h-screen flex flex-col justify-center"} style={{ background: `${bgColor}` }}>
                   <h1 className={`text-xl md:text-3xl font-extrabold mb-2`} style={{ color: `${textColor}` }}>
                         {quote.text}
                   </h1>
