@@ -1,17 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Home() {
-      const [quote, setQuote] = useState({ text: "Test Quote", author: "Test Author" });
-
-      useEffect(() => {
-            fetch("https://type.fit/api/quotes")
-                  .then((response) => response.json())
-                  .then((data) => {
-                        setQuote({ text: data[0].text, author: data[0].author.replace(", type.fit", "") });
-                  });
-      }, []);
+      const quote: Quote = { text: "Genius is one percent inspiration and ninety-nine percent perspiration.", author: "Thomas Edison" };
 
       const [bgColor, setBgColor] = useState("#FFFFFF");
       const [textColor, setTextColor] = useState("#000000");
@@ -65,4 +57,9 @@ export default function Home() {
                   </div>
             </div>
       );
+}
+
+interface Quote {
+      text: string;
+      author: string;
 }
