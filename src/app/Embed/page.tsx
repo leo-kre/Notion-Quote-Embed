@@ -576,7 +576,7 @@ export default function Embed() {
                         {quote.text}
                   </h1>
                   <h2 className={`text-lg font-semibold`} style={{ color: accentColor }}>
-                        {quote.author == "" ? "~Unknown" : "~" + quote.author}
+                        {quote.author == "" ? "~ Unknown" : "~ " + quote.author}
                   </h2>
             </div>
       );
